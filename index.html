@@ -9,81 +9,58 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       line-height: 1.6;
       background: #f8f5f2;
       color: #333;
+    }
+
+    /* Menú horizontal */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #8b5e3c;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      z-index: 100;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd9b3;
+    }
+
+    /* Secciones */
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
       text-align: center;
     }
 
-    header {
-      padding: 100px 20px 60px;
-      background: url('https://via.placeholder.com/1200x500') no-repeat center/cover;
-      color: white;
-    }
-
-    header h1 {
+    /* Sección Inicio */
+    #inicio h1 {
       font-size: 3em;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+      margin-bottom: 10px;
     }
 
-    header p {
+    #inicio p {
       font-size: 1.2em;
-      margin-top: 10px;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h2 {
-      font-size: 2em;
       margin-bottom: 20px;
-      color: #8b5e3c;
     }
 
-    .evento {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 20px;
-      text-align: left;
-    }
-
-    .evento div {
-      flex: 1 1 300px;
-      background: #fff5eb;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .mapa iframe {
-      width: 100%;
-      height: 300px;
-      border: 0;
-      border-radius: 15px;
-    }
-
-    .galeria {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .galeria img {
-      width: 200px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
+    /* Botón Confirmar asistencia */
     .boton-rsvp {
       display: inline-block;
-      margin-top: 30px;
+      margin-top: 20px;
       padding: 15px 30px;
       background: #8b5e3c;
       color: white;
@@ -97,76 +74,64 @@
       background: #a77550;
     }
 
-    footer {
-      padding: 40px 20px;
-      background: #8b5e3c;
-      color: white;
-    }
-
     /* Responsive */
-    @media(max-width: 600px){
-      header h1 { font-size: 2em; }
-      .evento { flex-direction: column; }
-      .galeria img { width: 100%; max-width: 300px; height: auto; }
+    @media(max-width:600px){
+      nav {
+        flex-direction: column;
+      }
+      nav a {
+        margin: 8px 0;
+      }
+      #inicio h1 {
+        font-size: 2em;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Portada -->
-  <header>
-    <h1>María & Juan</h1>
-    <p>¡Nos casamos! 12 de junio de 2027</p>
-  </header>
+  <!-- Menú horizontal -->
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#iglesia">Iglesia</a>
+    <a href="#finca">Finca</a>
+    <a href="#buses">Buses</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#lista">Lista de bodas</a>
+  </nav>
 
-  <!-- Detalles del evento -->
-  <section>
-    <h2>Detalles del evento</h2>
-    <div class="evento">
-      <div>
-        <h3>Ceremonia</h3>
-        <p>12:00 PM en la Iglesia de San Miguel</p>
-      </div>
-      <div>
-        <h3>Celebración</h3>
-        <p>2:00 PM en Salón La Hacienda</p>
-      </div>
-      <div>
-        <h3>Dress code</h3>
-        <p>Formal elegante / colores pasteles</p>
-      </div>
-    </div>
+  <!-- Sección Inicio -->
+  <section id="inicio">
+    <h1>Laura & Jorge</h1>
+    <p>19 de diciembre de 2026 - Ciudad, País</p>
+    <a class="boton-rsvp" href="https://www.google.com" target="_blank">Confirmar asistencia</a>
   </section>
 
-  <!-- Mapa -->
-  <section>
-    <h2>Cómo llegar</h2>
-    <div class="mapa">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." allowfullscreen="" loading="lazy"></iframe>
-    </div>
+  <!-- Secciones vacías para los otros apartados -->
+  <section id="iglesia">
+    <h2>Iglesia</h2>
+    <p>Aquí irá la información sobre la ceremonia.</p>
   </section>
 
-  <!-- Galería de fotos -->
-  <section>
-    <h2>Galería</h2>
-    <div class="galeria">
-      <img src="https://via.placeholder.com/400x300" alt="Foto 1">
-      <img src="https://via.placeholder.com/400x300" alt="Foto 2">
-      <img src="https://via.placeholder.com/400x300" alt="Foto 3">
-      <img src="https://via.placeholder.com/400x300" alt="Foto 4">
-    </div>
+  <section id="finca">
+    <h2>Finca</h2>
+    <p>Aquí irá la información sobre la celebración.</p>
   </section>
 
-  <!-- Formulario RSVP -->
-  <section>
-    <h2>Confirmar asistencia</h2>
-    <a class="boton-rsvp" href="https://forms.gle/TU_FORMULARIO" target="_blank">Rellena el formulario</a>
+  <section id="buses">
+    <h2>Buses</h2>
+    <p>Información sobre transporte y buses para invitados.</p>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>¡Nos vemos en el gran día!</p>
-  </footer>
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Cómo contactar con nosotros.</p>
+  </section>
+
+  <section id="lista">
+    <h2>Lista de bodas</h2>
+    <p>Información sobre regalos y lista de bodas.</p>
+  </section>
 
 </body>
 </html>
