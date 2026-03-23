@@ -24,13 +24,14 @@
       padding: 10px 20px;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap; /* permite que se adapte en móviles */
       z-index: 100;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 8px 15px; /* mejor espacio para móviles */
       font-weight: bold;
       transition: color 0.3s;
     }
@@ -41,10 +42,21 @@
 
     /* Secciones */
     section {
-      padding: 80px 20px;
+      padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
       text-align: center;
+    }
+
+    /* Foto de portada responsive */
+    .foto-portada {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      display: block;
+      margin: 0 auto 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
     /* Sección Inicio */
@@ -72,10 +84,24 @@
     }
 
     .boton-rsvp:hover {
-      background: #A9C4AE;
+      background: #8FA68E;
     }
 
-    /* Responsive */
+    /* Mapas responsive */
+    .mapa iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 300px;
+      border: 0;
+      border-radius: 10px;
+    }
+
+    /* Secciones alternas con fondo suave */
+    section:nth-child(even) {
+      background: #FFF1E6;
+    }
+
+    /* Responsive general */
     @media(max-width:600px){
       nav {
         flex-direction: column;
@@ -85,6 +111,12 @@
       }
       #inicio h1 {
         font-size: 2em;
+      }
+      #inicio p {
+        font-size: 1em;
+      }
+      .boton-rsvp {
+        padding: 12px 25px;
       }
     }
   </style>
@@ -103,46 +135,51 @@
 
   <!-- Sección Inicio -->
   <section id="inicio">
-    <!-- Foto encima del título -->
-  <img src="images/FA0E9FE9-93C7-4AE5-8319-F977496D0233_1_105_c.jpeg" alt="Laura & Jorge" class="foto-portada">
+    <img src="images/FA0E9FE9-93C7-4AE5-8319-F977496D0233_1_105_c.jpeg" alt="Laura & Jorge" class="foto-portada">
     <h1>Laura & Jorge</h1>
     <p>19 de diciembre de 2026 - Madrid</p>
     <a class="boton-rsvp" href="https://www.google.com" target="_blank">Confirmar asistencia</a>
   </section>
 
-  <!-- Secciones vacías para los otros apartados -->
+  <!-- Sección Iglesia -->
   <section id="iglesia">
-  <h2>Iglesia</h2>
-  <p>Parroquia de San Cristóbal y San Rafael</p>
-  <div class="mapa">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.40887509312!2d-0.000000!3d0.000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z0JDQvdC40LLQtdGC!5e0!3m2!1ses!2ses!4v0000000000000"
-      width="100%" height="300" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy">
-    </iframe>
-  </div>
-</section>
+    <h2>Iglesia</h2>
+    <p>Parroquia de San Cristóbal y San Rafael</p>
+    <div class="mapa">
+      <!-- RECUERDA: reemplazar src por iframe correcto de Google Maps web -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.40887509312!2d-0.000000!3d0.000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z0JDQvdC40LLQtdGC!5e0!3m2!1ses!2ses!4v0000000000000"
+        allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+  </section>
 
+  <!-- Sección Finca -->
   <section id="finca">
-  <h2>Finca</h2>
-  <p>Finca Astilbe by Eneldo</p>
-  <div class="mapa">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.40887509312!2d-0.000000!3d0.000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z0JDQvdC40LLQtdGC!5e0!3m2!1ses!2ses!4v0000000000001"
-      width="100%" height="300" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy">
-    </iframe>
-  </div>
-</section>
+    <h2>Finca</h2>
+    <p>Finca Astilbe by Eneldo</p>
+    <div class="mapa">
+      <!-- RECUERDA: reemplazar src por iframe correcto de Google Maps web -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.40887509312!2d-0.000000!3d0.000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z0JDQvdC40LLQtdGC!5e0!3m2!1ses!2ses!4v0000000000001"
+        allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+  </section>
 
+  <!-- Sección Buses -->
   <section id="buses">
     <h2>Buses</h2>
     <p>Información sobre transporte y buses para invitados.</p>
   </section>
 
+  <!-- Sección Contacto -->
   <section id="contacto">
     <h2>Contacto</h2>
     <p>Cómo contactar con nosotros.</p>
   </section>
 
+  <!-- Sección Lista de bodas -->
   <section id="lista">
     <h2>Lista de bodas</h2>
     <p>Información sobre regalos y lista de bodas.</p>
