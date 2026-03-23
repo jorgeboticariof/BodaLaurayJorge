@@ -16,3 +16,55 @@
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
+
+/* Ocultar checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Menú normal (escritorio) */
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+/* Icono hamburguesa */
+.menu-icon {
+  display: none;
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+}
+
+/* Móvil */
+@media(max-width:600px){
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Mostrar botón hamburguesa */
+  .menu-icon {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  /* Ocultar menú por defecto */
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu a {
+    padding: 10px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+
+  /* Mostrar menú cuando checkbox está activo */
+  #menu-toggle:checked + .menu-icon + .menu {
+    display: flex;
+  }
+}
