@@ -17,16 +17,23 @@
     }
 
     /* Menú horizontal */
-    nav {
-      position: sticky;
-      top: 0;
-      background: #A9C4AE;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap; /* permite que se adapte en móviles */
-      z-index: 100;
-    }
+    <nav>
+  <!-- Checkbox oculto -->
+  <input type="checkbox" id="menu-toggle">
+
+  <!-- Botón hamburguesa -->
+  <label for="menu-toggle" class="menu-icon">☰</label>
+
+  <!-- Menú -->
+  <div class="menu">
+    <a href="#inicio">Inicio</a>
+    <a href="#iglesia">Iglesia</a>
+    <a href="#finca">Finca</a>
+    <a href="#buses">Buses</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#lista">Lista de bodas</a>
+  </div>
+</nav>
 
     nav a {
       color: white;
