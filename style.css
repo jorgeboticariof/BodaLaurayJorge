@@ -8,10 +8,11 @@
 }
 
 .foto-portada {
-  width: 100%;
-  max-width: 100px; /* puedes ajustar según el tamaño deseado */
-  height: auto;
+  width: 100%;          /* ocupa todo el ancho disponible */
+  max-width: 400px;     /* ancho máximo en escritorio */
+  height: auto;         /* mantiene proporción original */
+  display: block;       /* para centrar correctamente */
+  margin: 0 auto 20px;  /* centrado horizontal + espacio debajo */
   border-radius: 15px;
-  margin-bottom: 20px; /* espacio debajo de la foto */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* sombra ligera para elegancia */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
