@@ -9,7 +9,7 @@
 
 .foto-portada {
   width: 100%;
-  max-width: 400px; /* puedes ajustar según el tamaño deseado */
+  max-width: 100px; /* puedes ajustar según el tamaño deseado */
   height: auto;
   border-radius: 15px;
   margin-bottom: 20px; /* espacio debajo de la foto */
