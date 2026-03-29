@@ -1,38 +1,119 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laura & Jorge</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* RESET GENERAL: Limpiamos los márgenes por defecto del navegador para que todo encaje bien */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-    <nav class="navbar">
-        <div class="logo">Laura & Jorge</div>
-        
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        
-        <label for="menu-toggle" class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
+/* CUERPO: Color de fondo general y color del texto */
+body {
+    background-color: #fdfaf7; 
+    color: #333;
+}
 
-        <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#iglesia">Iglesia</a></li>
-            <li><a href="#finca">Finca</a></li>
-            <li><a href="#buses">Buses</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-            <li><a href="#lista" class="btn-lista">Lista de bodas</a></li>
-        </ul>
-    </nav>
+/* BARRA DE NAVEGACIÓN (PC): Diseño horizontal y fijado arriba al hacer scroll */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-    <header id="inicio" class="hero">
-        <h1>¡Nos casamos!</h1>
-        <p>Acompáñanos en nuestro gran día</p>
-    </header>
+/* LOGO: Estilo de las iniciales */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #b8947e; 
+}
 
-    </body>
-</html>
+/* LISTA DE ENLACES (PC): Los pone uno al lado del otro */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+/* ESTILO DE LOS LINKS: Quita el subrayado y define el color */
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+/* EFECTO HOVER: Cambia el color cuando pasas el ratón por encima */
+.nav-links a:hover {
+    color: #b8947e;
+}
+
+/* BOTÓN LISTA DE BODAS: Un estilo diferente para que destaque como botón */
+.btn-lista {
+    background-color: #b8947e;
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+/* MENÚ MÓVIL (OCULTO): El checkbox y el icono no se ven en la versión de ordenador */
+.menu-toggle, .hamburger {
+    display: none;
+}
+
+/* SECCIÓN HERO: La cabecera grande con el título de la boda */
+.hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #e2d1c3; /* Aquí podrás poner una foto vuestra más adelante */
+}
+
+/* --- MEDIA QUERY: Aquí definimos qué pasa cuando la pantalla es pequeña (Móvil) --- */
+@media (max-width: 768px) {
+    
+    /* Muestra el icono de las 3 rayas */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    /* Dibujo de las 3 rayitas del menú */
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+    }
+
+    /* Transforma la lista de enlaces en un menú vertical oculto bajo la barra */
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Aparece justo debajo de la navbar */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    /* LÓGICA DE APERTURA: Si el checkbox está marcado, muestra la lista (.nav-links) */
+    .menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    /* Espaciado entre los enlaces en el móvil para que sea fácil pulsar con el dedo */
+    .nav-links li {
+        margin: 15px 0;
+    }
+}
