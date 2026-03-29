@@ -1,3 +1,51 @@
+/* Reset básico: quitamos márgenes por defecto del navegador */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* CUERPO: Tipografía y color de fondo general */
+body {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400; /*Peso normal*/
+      line-height: 1.6;
+      background: #FAFFFC;
+      color: #3E3A36;
+    }
+
+
+nav {
+    background-color: #A9C4AE; /* El verde ahora es el fondo de toda la barra */
+    display: flex;
+    justify-content: center; /* Centra el menú en escritorio */
+    align-items: center;
+    min-height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+/* 4. ENLACES DEL MENÚ: 
+   Quitamos el 'margin' que separaba los cuadros y usamos 'padding' para que el verde sea continuo. */
+nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;       /* Espacio interno para que el botón sea grande */
+    height: 60px;          /* Misma altura que el nav para llenar la franja */
+    color: #FAFFFC;        /* Texto blanco */
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase; /* Queda más elegante en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    transition: background 0.3s, color 0.3s;
+}
+
+/* 5. EFECTO HOVER: Oscurece el fondo del enlace al pasar el ratón */
+nav a:hover {
+    background-color: #8FA68E; 
+    color: #FFFFFF;
+}
+
+/* El ajuste del maps para la Iglesia y para la finca */
 .mapa iframe {
   width: 100%;
   max-width: 600px;
@@ -6,38 +54,79 @@
   border-radius: 10px;
 }
 
+/* FOTO DE PORTADA DENTRO DE LA TARJETA */
 .foto-portada {
-  width: 100%;          /* ocupa todo el ancho disponible */
-  max-width: 400px;     /* ancho máximo en escritorio */
-  height: auto;         /* mantiene proporción original */
-  display: block;       /* para centrar correctamente */
-  margin: 0 auto 20px;  /* centrado horizontal + espacio debajo */
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 320px; /* Foto un poco más contenida */
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 25px; /* Espacio con el nombre */
 }
 
- body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: #FAFFFC;
-      color: #3E3A36;
-    }
+/* Secciones: Espaciado general */
+section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+}
 
-/* Ocultar checkbox */
+ /* BOTÓN RSVP (Confirmar asistencia) */
+.boton-rsvp {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: #A9C4AE;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 25px; /* Botón redondeado elegante */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.boton-rsvp:hover {
+    background-color: #8FA68E;
+    transform: translateY(-2px); /* Pequeño salto al hover */
+}
+
+/* Menú Movil */
 #menu-toggle {
   display: none;
 }
-nav a {
-      color: white;
-      text-decoration: none;
-      margin: 8px 15px; /* mejor espacio para móviles */
-      font-weight: bold;
-      transition: color 0.3s;
-    }
+    
+/* Ajuste específico para vuestros nombres en el inicio */
+#inicio h1 {
+    font-size: 3rem;
+    color: #3E3A36;
+    margin-top: 105x;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
 
-    nav a:hover {
-      color: #ffd9b3;
-    }
+/* Espaciado entre las líneas de texto */
+p {
+    line-height: 1.8; /* Más espacio entre renglones */
+    margin-bottom: 20px; /* Espacio debajo de cada párrafo */
+    letter-spacing: 0.5px; /* Un pelín de aire entre letras */
+}
+
+#inicio p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Mapas responsive */
+.mapa iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    border: 0;
+    border-radius: 10px;
+}
+ 
 /* Menú normal (escritorio) */
 .menu {
   display: flex;
@@ -46,11 +135,188 @@ nav a {
 
 /* Icono hamburguesa */
 .menu-icon {
-  display: none;
-  font-size: 2em;
-  color: white;
-  cursor: pointer;
+    display: none; /* Se oculta en PC */
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
 }
+
+/* --- MEDIA QUERY PARA MÓVIL (MENOS DE 600px) --- */
+@media(max-width: 600px) {
+
+    /* BARRA DE MENÚ: Para que no se corte arriba */
+    nav {
+        flex-direction: column; /* Icono arriba, enlaces abajo */
+        height: auto;
+        padding-top: 10px;
+    }
+
+    /* TARJETA DE BIENVENIDA: Ajustes en móvil */
+    .tarjeta-bienvenida {
+        padding: 25px; /* Menos padding interno */
+        border-radius: 15px;
+    }
+
+    .foto-portada {
+        max-width: 100%; /* La foto ocupa todo el ancho de la tarjeta */
+        border-radius: 10px;
+    }
+
+    .texto-bienvenida h1 {
+        font-size: 2rem; /* Título un poco más pequeño */
+    }
+
+    .boton-rsvp {
+        width: 100%; /* El botón ocupa todo el ancho */
+        padding: 12px;
+    }
+}
+
+/* CONTENEDOR DE LA TABLA: Permite scroll lateral si la pantalla es muy pequeña */
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 25px;
+}
+
+/* ESTILO DE LA TABLA */
+.tabla-buses {
+    width: 100%;
+    border-collapse: collapse; /* Elimina espacios entre bordes */
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden; /* Para que los bordes redondeados funcionen */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* CABECERA DE LA TABLA */
+.tabla-buses th {
+    background-color: #A9C4AE; /* Tu verde de boda */
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* CELDAS DE LA TABLA */
+.tabla-buses td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+/* FILAS ALTERNAS: Para facilitar la lectura */
+.tabla-buses tr:nth-child(even) {
+    background-color: #fcfdfc;
+}
+
+/* NOTA AL PIE DE LA TABLA */
+.nota-bus {
+    font-style: italic;
+    font-size: 0.85rem;
+    margin-top: 15px;
+    color: #777;
+}
+
+/* GRID DE INFORMACIÓN: Pone los datos en columnas en PC y filas en móvil */
+.info-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Para que en móvil se apilen */
+}
+
+/* AJUSTE MÓVIL: Letra un poco más pequeña para que quepa todo */
+@media (max-width: 600px) {
+    .tabla-buses td, .tabla-buses th {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+}
+
+/* ICONOS: Un detalle visual arriba del título */
+.icono-boda {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* SEPARADOR ELEGANTE: Línea que se difumina hacia los lados */
+section {
+    position: relative;
+    padding-bottom: 100px;
+}
+
+section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0%;      /* Empieza al 20% del ancho */
+    right: 0%;     /* Termina al 80% del ancho */
+    height: 2px;    /* Muy fina */
+    background: linear-gradient(to right, transparent, #A9C4AE, transparent);
+}
+
+section:last-of-type::after {
+    display: none; /* No poner línea después de la lista de bodas */
+}
+
+
+
+
+/*----------- PRINCIPIO MEJORA FOTO ----------------*/
+/* SECCIÓN INICIO: Centrado total y espacio para el menú */
+#inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px); /* Ocupa casi todo el alto de la pantalla */
+    padding: 40px 20px;
+    background-color: #FAFFFC; /* Fondo muy suave */
+}
+
+/* TARJETA DE BIENVENIDA (LA MEJORA CLAVE) */
+.tarjeta-bienvenida {
+    background-color: #FFFFFF; /* Fondo blanco puro para resaltar */
+    border-radius: 20px; /* Bordes redondeados modernos */
+    padding: 60px 40px;
+    max-width: 550px; /* Ancho máximo en PC */
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(169, 196, 174, 0.12); /* Sombra suave con tu verde */
+    text-align: center;
+    gap:25px; /* Crea un espacio automático y uniforme entre foto, nombre y botón */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* TEXTO DE BIENVENIDA */
+.texto-bienvenida h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #3E3A36;
+}
+
+.texto-bienvenida p {
+    font-size: 1.1rem;
+    color: #777777;
+    margin-bottom: 25px; /* Espacio con el botón */
+}
+
+/*----------- FiNAL MEJORA FOTO ----------------*/
+/*----------- Fuentes elegantes ----------------*/
+/* 2. TÍTULOS ELEGANTES: Playfair Display para un toque de distinción */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+/*----------- Fin fuentes elegantes ----------------*/
 
 /* Móvil */
 @media(max-width:600px){
@@ -74,7 +340,7 @@ nav a {
     text-align: center;
   }
 
-  .menu a {
+  .menu navbar {
     padding: 10px;
     border-top: 1px solid rgba(255,255,255,0.2);
   }
