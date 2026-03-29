@@ -1,193 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laura & Jorge</title>
-  <!-- Aquí enlazas el CSS -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="images/wedding-ring.png">
-  <style>
-    /* Reset básico */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    /* body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: #FAFFFC;
-      color: #3E3A36;
-    } */
-
-    /* Menú horizontal */
-    <nav>
-  <!-- Checkbox oculto -->
-  <input type="checkbox" id="menu-toggle">
-
-  <!-- Botón hamburguesa -->
-  <label for="menu-toggle" class="menu-icon">☰</label>
-
-  <!-- Menú -->
-  <div class="menu">
-    <a href="#inicio">Inicio</a>
-    <a href="#iglesia">Iglesia</a>
-    <a href="#finca">Finca</a>
-    <a href="#buses">Buses</a>
-    <a href="#contacto">Contacto</a>
-    <a href="#lista">Lista de bodas</a>
-  </div>
-</nav>
-
-   /* nav a {
-      color: white;
-      text-decoration: none;
-      margin: 8px 15px; /* mejor espacio para móviles */
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #ffd9b3;
-    } */
-
-    /* Secciones */
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
-
-    /* Foto de portada responsive */
-    .foto-portada {
-      width: 100%;
-      max-width: 400px;
-      height: auto;
-      display: block;
-      margin: 0 auto 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    /* Sección Inicio */
-    #inicio h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
-
-    #inicio p {
-      font-size: 1.2em;
-      margin-bottom: 20px;
-    }
-
-    /* Botón Confirmar asistencia */
-    .boton-rsvp {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 15px 30px;
-      background: #A9C4AE;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .boton-rsvp:hover {
-      background: #8FA68E;
-    }
-
-    /* Mapas responsive */
-    .mapa iframe {
-      width: 100%;
-      max-width: 600px;
-      height: 300px;
-      border: 0;
-      border-radius: 10px;
-    }
-
-    /* Responsive general */
-    @media(max-width:600px){
-      nav {
-        flex-direction: column;
-      }
-      nav a {
-        margin: 8px 0;
-      }
-      #inicio h1 {
-        font-size: 2em;
-      }
-      #inicio p {
-        font-size: 1em;
-      }
-      .boton-rsvp {
-        padding: 12px 25px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laura & Jorge</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Menú horizontal -->
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#iglesia">Iglesia</a>
-    <a href="#finca">Finca</a>
-    <a href="#buses">Buses</a>
-    <a href="#contacto">Contacto</a>
-    <a href="#lista">Lista de bodas</a>
-  </nav>
+    <nav class="navbar">
+        <div class="logo">Laura & Jorge</div>
+        
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        
+        <label for="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
 
-  <!-- Sección Inicio -->
-  <section id="inicio">
-    <img src="images/FA0E9FE9-93C7-4AE5-8319-F977496D0233_1_105_c.jpeg" alt="Laura & Jorge" class="foto-portada">
-    <h1>Laura & Jorge</h1>
-    <p>19 de diciembre de 2026 - Madrid</p>
-    <a class="boton-rsvp" href="https://www.google.com" target="_blank">Confirmar asistencia</a>
-  </section>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#iglesia">Iglesia</a></li>
+            <li><a href="#finca">Finca</a></li>
+            <li><a href="#buses">Buses</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#lista" class="btn-lista">Lista de bodas</a></li>
+        </ul>
+    </nav>
 
-  <!-- Sección Iglesia -->
-  <section id="iglesia">
-    <h2>Iglesia</h2>
-    <p>Parroquia de San Cristóbal y San Rafael</p>
-    <div class="mapa">
-      <!-- RECUERDA: reemplazar src por iframe correcto de Google Maps web -->
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.40887509312!2d-0.000000!3d0.000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z0JDQvdC40LLQtdGC!5e0!3m2!1ses!2ses!4v0000000000000"
-        allowfullscreen="" loading="lazy">
-      </iframe>
-    </div>
-  </section>
+    <header id="inicio" class="hero">
+        <h1>¡Nos casamos!</h1>
+        <p>Acompáñanos en nuestro gran día</p>
+    </header>
 
-  <!-- Sección Finca -->
-  <section id="finca">
-    <h2>Finca</h2>
-    <p>Finca Astilbe by Eneldo</p>
-    <div class="mapa">
-      <!-- RECUERDA: reemplazar src por iframe correcto de Google Maps web -->
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.40887509312!2d-0.000000!3d0.000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z0JDQvdC40LLQtdGC!5e0!3m2!1ses!2ses!4v0000000000001"
-        allowfullscreen="" loading="lazy">
-      </iframe>
-    </div>
-  </section>
-
-  <!-- Sección Buses -->
-  <section id="buses">
-    <h2>Buses</h2>
-    <p>Información sobre transporte y buses para invitados.</p>
-  </section>
-
-  <!-- Sección Contacto -->
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>Cómo contactar con nosotros.</p>
-  </section>
-
-  <!-- Sección Lista de bodas -->
-  <section id="lista">
-    <h2>Lista de bodas</h2>
-    <p>Información sobre regalos y lista de bodas.</p>
-  </section>
-
-</body>
+    </body>
 </html>
