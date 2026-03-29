@@ -353,6 +353,7 @@ h1, h2, h3 {
         text-align: left;
         padding: 15px 0;
         border-top: 1px solid rgba(255,255,255,0.2); /* Una línea sutil entre opciones */
+        transition: all 0.3s ease; /* Esto hará que el plegado sea más suave */
     }
 
     /* LÓGICA DEL DESPLEGABLE: 
