@@ -1,192 +1,116 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laura & Jorge</title>
-  <!-- Aquí enlazas el CSS -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="images/wedding-ring.png">
-  <style>
-    /* Reset básico */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    /* body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: #FAFFFC;
-      color: #3E3A36;
-    } */
-
-    /* Menú horizontal */
-    <nav>
-  <!-- Checkbox oculto -->
-  <input type="checkbox" id="menu-toggle">
-
-  <!-- Botón hamburguesa -->
-  <label for="menu-toggle" class="menu-icon">☰</label>
-
-  <!-- Menú -->
-  <div class="menu">
-    <a href="#inicio">Inicio</a>
-    <a href="#iglesia">Iglesia</a>
-    <a href="#finca">Finca</a>
-    <a href="#buses">Buses</a>
-    <a href="#contacto">Contacto</a>
-    <a href="#lista">Lista de bodas</a>
-  </div>
-</nav>
-
-   /* nav a {
-      color: white;
-      text-decoration: none;
-      margin: 8px 15px; /* mejor espacio para móviles */
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #ffd9b3;
-    } */
-
-    /* Secciones */
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
-
-    /* Foto de portada responsive */
-    .foto-portada {
-      width: 100%;
-      max-width: 400px;
-      height: auto;
-      display: block;
-      margin: 0 auto 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    /* Sección Inicio */
-    #inicio h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
-
-    #inicio p {
-      font-size: 1.2em;
-      margin-bottom: 20px;
-    }
-
-    /* Botón Confirmar asistencia */
-    .boton-rsvp {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 15px 30px;
-      background: #A9C4AE;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .boton-rsvp:hover {
-      background: #8FA68E;
-    }
-
-    /* Mapas responsive */
-    .mapa iframe {
-      width: 100%;
-      max-width: 600px;
-      height: 300px;
-      border: 0;
-      border-radius: 10px;
-    }
-
-    /* Responsive general */
-    @media(max-width:600px){
-      nav {
-        flex-direction: column;
-      }
-      nav a {
-        margin: 8px 0;
-      }
-      #inicio h1 {
-        font-size: 2em;
-      }
-      #inicio p {
-        font-size: 1em;
-      }
-      .boton-rsvp {
-        padding: 12px 25px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Laura & Jorge</title>
+    <!-- Aquí enlazas el CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/wedding-ring.png">
 </head>
 <body>
 
-  <!-- Menú horizontal -->
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#iglesia">Iglesia</a>
-    <a href="#finca">Finca</a>
-    <a href="#buses">Buses</a>
-    <a href="#contacto">Contacto</a>
-    <a href="#lista">Lista de bodas</a>
-  </nav>
+<!-- Menú horizontal -->
+    <nav class="navbar" >
+        <input type="checkbox" id="menu-toggle">  <!-- Checkbox oculto -->
+        <label for="menu-toggle" class="menu-icon">☰</label> <!-- Botón hamburguesa -->
+        <a href="#inicio">Inicio</a>
+        <a href="#iglesia">Iglesia</a>
+        <a href="#finca">Finca</a>
+        <a href="#buses">Buses</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#lista">Lista de bodas</a>
+    </nav>  
 
-  <!-- Sección Inicio -->
+  <!-- SECCIONES --> 
   <section id="inicio">
-    <img src="images/FA0E9FE9-93C7-4AE5-8319-F977496D0233_1_105_c.jpeg" alt="Laura & Jorge" class="foto-portada">
-    <h1>Laura & Jorge</h1>
-    <p>19 de diciembre de 2026 - Madrid</p>
-    <a class="boton-rsvp" href="https://www.google.com" target="_blank">Confirmar asistencia</a>
-  </section>
+    <div class="tarjeta-bienvenida">
+        <img src="images/FotoBoda.jpeg" alt="Laura & Jorge" class="foto-portada">
+        
+        <div class="texto-bienvenida">
+            <h1>¡Save the Date!</h1>
+            <h2>Laura & Jorge</h2>
+            <p>19 de Diciembre de 2026. Madrid</p>
+        </div>
 
-  <!-- Sección Iglesia -->
-  <section id="iglesia">
-    <h2>Iglesia</h2>
-    <p>Parroquia de San Cristóbal y San Rafael</p>
-    <div class="mapa">
-      <!-- RECUERDA: reemplazar src por iframe correcto de Google Maps web -->
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.40887509312!2d-0.000000!3d0.000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z0JDQvdC40LLQtdGC!5e0!3m2!1ses!2ses!4v0000000000000"
-        allowfullscreen="" loading="lazy">
-      </iframe>
+        <a class="boton-rsvp" href="https://www.google.com" target="_blank">Confirmar asistencia</a>
     </div>
-  </section>
+</section>
 
-  <!-- Sección Finca -->
+  <section id="iglesia" class="section-content">
+    <div class="icono-boda">⛪</div>
+    <h2>La Ceremonia</h2>
+    <p><strong>13:00h</strong> - Parroquia de San Cristóbal y San Rafael</p>
+    <p>Calle Bravo Murillo 39, Chamberí, 28015 Madrid</p>
+    <div class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3629.8318921919026!2d-3.7078446234183833!3d40.437149971436284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42285f14234dd1%3A0x71ca0a30e5120a33!2sParroquia%20de%20San%20Crist%C3%B3bal%20y%20San%20Rafael!5e1!3m2!1ses!2ses!4v1774816468952!5m2!1ses!2ses" loading="lazy"></iframe>
+    </div>
+</section>
+
   <section id="finca">
-    <h2>Finca</h2>
-    <p>Finca Astilbe by Eneldo</p>
+    <div class="icono-boda">🥂</div>
+    <h2>La Finca</h2>
+    <p>La celebración será en Finca Astilbe by Eneldo</p>
+    <p> Carretera de Fuencarral, km 1,9, Fuencarral-El Pardo, 28049 Madrid</p>
     <div class="mapa">
-      <!-- RECUERDA: reemplazar src por iframe correcto de Google Maps web -->
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.40887509312!2d-0.000000!3d0.000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z0JDQvdC40LLQtdGC!5e0!3m2!1ses!2ses!4v0000000000001"
-        allowfullscreen="" loading="lazy">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.198177151644!2d-3.6696198234148856!3d40.52290317142285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422c6fc38d6ca3%3A0x12937a903a44872!2sFinca%20Astilbe%20by%20Eneldo!5e1!3m2!1ses!2ses!4v1774816592001!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>
   </section>
 
-  <!-- Sección Buses -->
-  <section id="buses">
-    <h2>Buses</h2>
-    <p>Información sobre transporte y buses para invitados.</p>
-  </section>
+  <section id="buses" class="section-content">
+    <div class="icono-boda">🚎</div>
+    <h2>Servicio de Autobuses</h2>
+    <p>Queremos que disfrutéis de la fiesta sin preocupaciones. Hemos organizado el siguiente servicio de transporte:</p>
+    
+    <div class="tabla-contenedor">
+        <table class="tabla-buses">
+            <thead>
+                <tr>
+                    <th>Trayecto</th>
+                    <th>Hora</th>
+                    <th>Punto de Encuentro</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Ida</strong></td>
+                    <td>14:15h</td>
+                    <td>Puerta de la Iglesia (C/ Bravo Murillo)</td>
+                </tr>
+                <tr>
+                    <td><strong>Vuelta 1</strong></td>
+                    <td>22:30h</td>
+                    <td>Salida de la Finca Astilbe</td>
+                </tr>
+                <tr>
+                    <td><strong>Vuelta 2</strong></td>
+                    <td>00:00h</td>
+                    <td>Salida de la Finca Astilbe</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="nota-bus">* Todas las vueltas tienen como destino final Plaza de Castilla.</p>
+</section>
 
-  <!-- Sección Contacto -->
   <section id="contacto">
+    <div class="icono-boda">📞</div>
     <h2>Contacto</h2>
-    <p>Cómo contactar con nosotros.</p>
+    <p>Cualquier duda que te surja no dudes en contactar con nosotros.</p>
+    <p> Jorge: +34 649068484</p>
+    <p> Laura: +34 634912991</p>
   </section>
 
-  <!-- Sección Lista de bodas -->
   <section id="lista">
+    <div class="icono-boda">🎁</div>
     <h2>Lista de bodas</h2>
-    <p>Información sobre regalos y lista de bodas.</p>
+    <p>Para nosotros, el mejor regalo es compartir este día tan especial a vuestro lado. Aun así, si deseáis contribuir a nuestro proyecto de vida, podéis hacerlo a través del siguiente número de cuenta.</p>
+    <p>IBAN: ESXX XXXX XXXX XXXX XXXX XXXXX</p>
   </section>
 
 </body>
