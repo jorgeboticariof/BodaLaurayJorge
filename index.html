@@ -9,7 +9,8 @@
     <title>Laura & Jorge</title>
     <!-- Aquí enlazas el CSS -->
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="images/wedding-ring.png">
+    <!-- <link rel="icon" type="image/png" href="images/wedding-ring.png"> -->
+    <link rel="icon" type="image/png" href="img/wedding-ring.png">
 </head>
 <body>
 
@@ -28,12 +29,13 @@
   <!-- SECCIONES --> 
   <section id="inicio">
     <div class="tarjeta-bienvenida">
-        <img src="images/FotoBoda.jpeg" alt="Laura & Jorge" class="foto-portada">
+        <img src="img/FotoBoda.jpeg" alt="Laura & Jorge" class="foto-portada">
         
         <div class="texto-bienvenida">
             <h1>¡Save the Date!</h1>
             <h2>Laura & Jorge</h2>
-            <p>19 de Diciembre de 2026. Madrid</p>
+            <p>19 de Diciembre de 2026</p>
+            <p>Madrid</p>
         </div>
 
         <a class="boton-rsvp" href="https://www.google.com" target="_blank">Confirmar asistencia</a>
@@ -102,8 +104,8 @@
     <div class="icono-boda">📞</div>
     <h2>Contacto</h2>
     <p>Cualquier duda que te surja no dudes en contactar con nosotros.</p>
-    <p> Jorge: +34 649068484</p>
-    <p> Laura: +34 634912991</p>
+    <p>Jorge: +34 649068484</p>
+    <p>Laura: +34 634912991</p>
   </section>
 
   <section id="lista">
@@ -113,5 +115,21 @@
     <p>IBAN: ESXX XXXX XXXX XXXX XXXX XXXXX</p>
   </section>
 
+  <!-- DESPLEGABLE-->
+   <script>
+    // Seleccionamos todos los enlaces que están dentro del menú de navegación
+    const menuLinks = document.querySelectorAll('nav a');
+    // Seleccionamos el checkbox que controla si el menú está abierto o cerrado
+    const menuToggle = document.getElementById('menu-toggle');
+
+    // Por cada enlace, añadimos un "escuchador" de clics
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            // Al hacer clic en cualquier enlace, desmarcamos el checkbox
+            // Esto hace que el CSS oculte el menú automáticamente
+            menuToggle.checked = false;
+        });
+    });
+</script>
 </body>
 </html>
