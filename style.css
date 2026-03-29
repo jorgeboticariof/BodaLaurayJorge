@@ -318,19 +318,53 @@ h1, h2, h3 {
 }
 /*----------- Fin fuentes elegantes ----------------*/
 
+
+
+
+
+
+
+
+
 /* Móvil */
 @media(max-width:600px){
 
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
+  /* BARRA DE NAVEGACIÓN: Se vuelve vertical */
+    nav {
+        flex-direction: column;
+        align-items: flex-start; /* Alinea el icono a la izquierda */
+        padding: 10px 20px;
+        height: auto;
+    }
 
-  /* Mostrar botón hamburguesa */
-  .menu-icon {
-    display: block;
-    margin-bottom: 10px;
-  }
+  /* EL ICONO HAMBURGUESA: Ahora sí se muestra */
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        padding: 10px 0;
+        color: white;
+    }
+
+    /* LOS ENLACES (EL CAMBIO CLAVE): 
+       Por defecto están ocultos (display: none) */
+    nav a {
+        display: none; 
+        width: 100%;
+        text-align: left;
+        padding: 15px 0;
+        border-top: 1px solid rgba(255,255,255,0.2); /* Una línea sutil entre opciones */
+    }
+
+    /* LÓGICA DEL DESPLEGABLE: 
+       Cuando el checkbox está marcado (+), los enlaces (a) pasan a mostrarse (flex) */
+    #menu-toggle:checked ~ a {
+        display: flex;
+    }
+
+    /* AJUSTE DE LA TARJETA EN INICIO: Para que no quede pegada al menú */
+    #inicio {
+        padding-top: 20px;
+    }
 
   /* Ocultar menú por defecto */
   .menu {
