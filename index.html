@@ -1,193 +1,119 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laura & Jorge</title>
-  <!-- Aquí enlazas el CSS -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="images/wedding-ring.png">
-  <style>
-    /* Reset básico */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+/* RESET GENERAL: Limpiamos los márgenes por defecto del navegador para que todo encaje bien */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-    /* body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: #FAFFFC;
-      color: #3E3A36;
-    } */
+/* CUERPO: Color de fondo general y color del texto */
+body {
+    background-color: #fdfaf7; 
+    color: #333;
+}
 
-    /* Menú horizontal */
-    <nav>
-  <!-- Checkbox oculto -->
-  <input type="checkbox" id="menu-toggle">
+/* BARRA DE NAVEGACIÓN (PC): Diseño horizontal y fijado arriba al hacer scroll */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-  <!-- Botón hamburguesa -->
-  <label for="menu-toggle" class="menu-icon">☰</label>
+/* LOGO: Estilo de las iniciales */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #b8947e; 
+}
 
-  <!-- Menú -->
-  <div class="menu">
-    <a href="#inicio">Inicio</a>
-    <a href="#iglesia">Iglesia</a>
-    <a href="#finca">Finca</a>
-    <a href="#buses">Buses</a>
-    <a href="#contacto">Contacto</a>
-    <a href="#lista">Lista de bodas</a>
-  </div>
-</nav>
+/* LISTA DE ENLACES (PC): Los pone uno al lado del otro */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
 
-   /* nav a {
-      color: white;
-      text-decoration: none;
-      margin: 8px 15px; /* mejor espacio para móviles */
-      font-weight: bold;
-      transition: color 0.3s;
-    }
+/* ESTILO DE LOS LINKS: Quita el subrayado y define el color */
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s ease;
+}
 
-    nav a:hover {
-      color: #ffd9b3;
-    } */
+/* EFECTO HOVER: Cambia el color cuando pasas el ratón por encima */
+.nav-links a:hover {
+    color: #b8947e;
+}
 
-    /* Secciones */
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
+/* BOTÓN LISTA DE BODAS: Un estilo diferente para que destaque como botón */
+.btn-lista {
+    background-color: #b8947e;
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
 
-    /* Foto de portada responsive */
-    .foto-portada {
-      width: 100%;
-      max-width: 400px;
-      height: auto;
-      display: block;
-      margin: 0 auto 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
+/* MENÚ MÓVIL (OCULTO): El checkbox y el icono no se ven en la versión de ordenador */
+.menu-toggle, .hamburger {
+    display: none;
+}
 
-    /* Sección Inicio */
-    #inicio h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
+/* SECCIÓN HERO: La cabecera grande con el título de la boda */
+.hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #e2d1c3; /* Aquí podrás poner una foto vuestra más adelante */
+}
 
-    #inicio p {
-      font-size: 1.2em;
-      margin-bottom: 20px;
-    }
-
-    /* Botón Confirmar asistencia */
-    .boton-rsvp {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 15px 30px;
-      background: #A9C4AE;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .boton-rsvp:hover {
-      background: #8FA68E;
-    }
-
-    /* Mapas responsive */
-    .mapa iframe {
-      width: 100%;
-      max-width: 600px;
-      height: 300px;
-      border: 0;
-      border-radius: 10px;
-    }
-
-    /* Responsive general */
-    @media(max-width:600px){
-      nav {
+/* --- MEDIA QUERY: Aquí definimos qué pasa cuando la pantalla es pequeña (Móvil) --- */
+@media (max-width: 768px) {
+    
+    /* Muestra el icono de las 3 rayas */
+    .hamburger {
+        display: flex;
         flex-direction: column;
-      }
-      nav a {
-        margin: 8px 0;
-      }
-      #inicio h1 {
-        font-size: 2em;
-      }
-      #inicio p {
-        font-size: 1em;
-      }
-      .boton-rsvp {
-        padding: 12px 25px;
-      }
+        gap: 5px;
+        cursor: pointer;
     }
-  </style>
-</head>
-<body>
 
-  <!-- Menú horizontal -->
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#iglesia">Iglesia</a>
-    <a href="#finca">Finca</a>
-    <a href="#buses">Buses</a>
-    <a href="#contacto">Contacto</a>
-    <a href="#lista">Lista de bodas</a>
-  </nav>
+    /* Dibujo de las 3 rayitas del menú */
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+    }
 
-  <!-- Sección Inicio -->
-  <section id="inicio">
-    <img src="images/FA0E9FE9-93C7-4AE5-8319-F977496D0233_1_105_c.jpeg" alt="Laura & Jorge" class="foto-portada">
-    <h1>Laura & Jorge</h1>
-    <p>19 de diciembre de 2026 - Madrid</p>
-    <a class="boton-rsvp" href="https://www.google.com" target="_blank">Confirmar asistencia</a>
-  </section>
+    /* Transforma la lista de enlaces en un menú vertical oculto bajo la barra */
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Aparece justo debajo de la navbar */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
 
-  <!-- Sección Iglesia -->
-  <section id="iglesia">
-    <h2>Iglesia</h2>
-    <p>Parroquia de San Cristóbal y San Rafael</p>
-    <div class="mapa">
-      <!-- RECUERDA: reemplazar src por iframe correcto de Google Maps web -->
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.40887509312!2d-0.000000!3d0.000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z0JDQvdC40LLQtdGC!5e0!3m2!1ses!2ses!4v0000000000000"
-        allowfullscreen="" loading="lazy">
-      </iframe>
-    </div>
-  </section>
+    /* LÓGICA DE APERTURA: Si el checkbox está marcado, muestra la lista (.nav-links) */
+    .menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
 
-  <!-- Sección Finca -->
-  <section id="finca">
-    <h2>Finca</h2>
-    <p>Finca Astilbe by Eneldo</p>
-    <div class="mapa">
-      <!-- RECUERDA: reemplazar src por iframe correcto de Google Maps web -->
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.40887509312!2d-0.000000!3d0.000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z0JDQvdC40LLQtdGC!5e0!3m2!1ses!2ses!4v0000000000001"
-        allowfullscreen="" loading="lazy">
-      </iframe>
-    </div>
-  </section>
-
-  <!-- Sección Buses -->
-  <section id="buses">
-    <h2>Buses</h2>
-    <p>Información sobre transporte y buses para invitados.</p>
-  </section>
-
-  <!-- Sección Contacto -->
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>Cómo contactar con nosotros.</p>
-  </section>
-
-  <!-- Sección Lista de bodas -->
-  <section id="lista">
-    <h2>Lista de bodas</h2>
-    <p>Información sobre regalos y lista de bodas.</p>
-  </section>
-
-</body>
-</html>
+    /* Espaciado entre los enlaces en el móvil para que sea fácil pulsar con el dedo */
+    .nav-links li {
+        margin: 15px 0;
+    }
+}
