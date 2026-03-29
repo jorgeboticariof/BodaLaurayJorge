@@ -28,7 +28,17 @@
 #menu-toggle {
   display: none;
 }
+nav a {
+      color: white;
+      text-decoration: none;
+      margin: 8px 15px; /* mejor espacio para móviles */
+      font-weight: bold;
+      transition: color 0.3s;
+    }
 
+    nav a:hover {
+      color: #ffd9b3;
+    }
 /* Menú normal (escritorio) */
 .menu {
   display: flex;
